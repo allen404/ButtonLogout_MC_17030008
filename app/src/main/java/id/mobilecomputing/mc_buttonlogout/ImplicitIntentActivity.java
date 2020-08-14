@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import id.mobilecomputing.mc_buttonlogout.auth.SharedPref;
 import id.mobilecomputing.mc_buttonlogout.auth.SimpleLoginActivity;
 
 public class ImplicitIntentActivity extends AppCompatActivity implements View.OnClickListener {
@@ -89,6 +90,7 @@ public class ImplicitIntentActivity extends AppCompatActivity implements View.On
                 break;
 
             case R.id.btn_logout:
+                SharedPref.clearLoggedInUser(getBaseContext());
                 Intent intent = new Intent(ImplicitIntentActivity.this, SimpleLoginActivity.class);
                 startActivity(intent);
                 finish();
